@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=GB2312">
+  <title>CorerMan Tools</title>
+  <link rel="stylesheet" type="text/css" media="all" href="style.css">
+  <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/jquery.leanModal.min.js"></script>
+</head>
+
+<body>
+  <div id="w">
+    <div id="content">
+      <h1>代码粘贴</h1>
+      <p>尊敬的用户:<br/>&nbsp;&nbsp;&nbsp;您好,这里是代码粘贴工具，您可以点击下面按钮开始工作。&nbsp;&nbsp;祝您愉快！</p>
+	 <center><a href="#loginmodal" class="flatbtn" id="modaltrigger">代码 粘贴</a></center>
+    </div>
+  </div>
+  <div id="loginmodal" style="display:none;">
+    <h1>代码 信息</h1>
+    <form action="code_paste.php" id="loginform" name="loginform" method="post" >
+      <label for="username">代码语言:</label>
+	  <select name="code_type">
+			<option value="cpp">C/C++</option>
+			<option value="python">Python</option>
+			<option value="java">JAVA</option>
+			<option value="php">PHP</option>
+		</select>
+   
+      <label for="password">代码:</label>
+     <textarea style="width:100%;" name="code_centent"></textarea>
+      <div class="center"><input type="submit" name="loginbtn" id="loginbtn" class="flatbtn-blu hidemodal" value="粘贴" tabindex="3"></div>
+    </form>
+  </div>
+<script type="text/javascript">
+$(function(){
+  $('loginform').submit(function(e){
+    return false;
+  });
+  
+  $('#modaltrigger').leanModal({ top: 110, overlay: 0.45, closeButton: ".hidemodal" });
+});
+</script>
+
+</body>
+</html>
